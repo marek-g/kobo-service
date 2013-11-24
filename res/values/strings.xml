@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">Kobo Rotate</string>
     <string name="toggle_screen_orientation">Toggle screen orientation</string>
+    <string name="touch_set_to">Touch orientation set to:</string>
+    <string name="touch_set_failed">Touch orientation FAILED to set to:</string>
+    <string name="portrait">portrait</string>
+    <string name="landscape">landscape</string>
+    <string name="portrait_reversed">portrait (reversed)</string>
+    <string name="landscape_reversed">landscape (reversed)</string>
+    <string name="unknown">unknown</string>
 </resources>

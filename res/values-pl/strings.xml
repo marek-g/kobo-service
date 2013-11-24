@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">Kobo Rotate</string>
     <string name="toggle_screen_orientation">Zmień orientację ekranu</string>
+    <string name="touch_set_to">Orientacja dotyku zmieniona na:</string>
+    <string name="touch_set_failed">NIE UDAŁO się zmienić orientacji dotyku na:</string>
+    <string name="portrait">pion</string>
+    <string name="landscape">poziom</string>
+    <string name="portrait_reversed">pion (odwrócony)</string>
+    <string name="landscape_reversed">poziom (odwrócony)</string>
+    <string name="unknown">nieznany</string>
 </resources>

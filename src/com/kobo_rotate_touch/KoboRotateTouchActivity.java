@@ -12,6 +12,8 @@ public class KoboRotateTouchActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        KoboRotateTouchService.startService(this);
+
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
         layoutParams.width = 320;
         layoutParams.height = 200;
