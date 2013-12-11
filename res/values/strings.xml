@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kobo Rotate</string>
+    <string name="app_name">Kobo Service</string>
     <string name="toggle_screen_orientation">Toggle screen orientation</string>
     <string name="touch_set_to">Touch orientation set to:</string>
     <string name="touch_set_failed">Touch orientation FAILED to set to:</string>

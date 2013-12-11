@@ -1,4 +1,4 @@
-package com.kobo_rotate_touch;
+package com.kobo_service;
 
 import android.content.Context;
 import android.os.Handler;

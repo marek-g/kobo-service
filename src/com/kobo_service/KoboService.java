@@ -1,4 +1,4 @@
-package com.kobo_rotate_touch;
+package com.kobo_service;
 
 import android.app.Service;
 import android.content.Context;
@@ -7,11 +7,11 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
-public class KoboRotateTouchService extends Service {
+public class KoboService extends Service {
     ConfigurationBroadcastReceiver _broadcastReceiver;
 
     public static void startService(Context context) {
-        Intent service = new Intent(context, KoboRotateTouchService.class);
+        Intent service = new Intent(context, KoboService.class);
         context.startService(service);
     }
 
@@ -28,11 +28,11 @@ public class KoboRotateTouchService extends Service {
 
     @Override
     public void onCreate() {
-        Log.i("KoboRotateTouchService", "KoboRotateTouchService is starting.");
+        Log.i("KoboService", "KoboService is starting.");
 
         if (_broadcastReceiver == null) {
             _broadcastReceiver = new ConfigurationBroadcastReceiver();
-            KoboRotateTouchApplication.getAppContext().registerReceiver(_broadcastReceiver,
+            KoboServiceApplication.getAppContext().registerReceiver(_broadcastReceiver,
                     new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED));
         }
 
@@ -41,10 +41,10 @@ public class KoboRotateTouchService extends Service {
 
     @Override
     public void onDestroy() {
-        Log.i("KoboRotateTouchService", "KoboRotateTouchService is stopping.");
+        Log.i("KoboService", "KoboService is stopping.");
 
         if (_broadcastReceiver != null) {
-            KoboRotateTouchApplication.getAppContext().unregisterReceiver(_broadcastReceiver);
+            KoboServiceApplication.getAppContext().unregisterReceiver(_broadcastReceiver);
             _broadcastReceiver = null;
         }
 

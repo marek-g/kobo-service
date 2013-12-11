@@ -1,17 +1,17 @@
-package com.kobo_rotate_touch;
+package com.kobo_service;
 
 import android.app.Application;
 import android.content.Context;
 
-public class KoboRotateTouchApplication extends Application {
+public class KoboServiceApplication extends Application {
     private static Context context;
 
     public void onCreate(){
         super.onCreate();
-        KoboRotateTouchApplication.context = getApplicationContext();
+        KoboServiceApplication.context = getApplicationContext();
     }
 
     public static Context getAppContext() {
-        return KoboRotateTouchApplication.context;
+        return KoboServiceApplication.context;
     }
 }

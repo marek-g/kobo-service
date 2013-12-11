@@ -1,4 +1,4 @@
-package com.kobo_rotate_touch;
+package com.kobo_service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,7 +11,7 @@ public class ConfigurationBroadcastReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
-            KoboRotateTouchService.startService(context);
+            KoboService.startService(context);
             OrientationHelper.setTouchOrientation(context, OrientationHelper.getScreenOrientation(context));
         } else if (Intent.ACTION_CONFIGURATION_CHANGED.equals(action)) {
             OrientationHelper.setTouchOrientation(context, OrientationHelper.getScreenOrientation(context));

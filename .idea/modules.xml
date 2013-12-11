@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/kobo_rotate_touch.iml" filepath="$PROJECT_DIR$/kobo_rotate_touch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kobo_service.iml" filepath="$PROJECT_DIR$/kobo_service.iml" />
     </modules>
   </component>
 </project>

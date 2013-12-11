@@ -1,4 +1,4 @@
-package com.kobo_rotate_touch;
+package com.kobo_service;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class KoboRotateTouchActivity extends Activity {
+public class KoboMainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        KoboRotateTouchService.startService(this);
+        KoboService.startService(this);
 
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
         layoutParams.width = 320;
