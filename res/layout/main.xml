@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
-    <Button
-            android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <Button android:id="@+id/button"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/toggle_screen_orientation"
-            android:id="@+id/button" android:layout_gravity="center" android:onClick="onToggleScreenOrientation"
+            android:layout_gravity="center"
+            android:onClick="onToggleScreenOrientation"
             android:singleLine="false"/>
-</FrameLayout>
+
+    <Spinner android:id="@+id/update_mode_spinner"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:entries="@array/update_modes"
+             android:prompt="@string/update_mode_prompt"/>
+
+</LinearLayout>
 

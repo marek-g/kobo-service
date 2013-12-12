@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 
 public class KoboMainActivity extends Activity {
     @Override
@@ -16,8 +18,21 @@ public class KoboMainActivity extends Activity {
 
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
         layoutParams.width = 320;
-        layoutParams.height = 200;
+        layoutParams.height = 240;
         getWindow().setAttributes(layoutParams);
+
+        Spinner updateModeSpinner = (Spinner)findViewById(R.id.update_mode_spinner);
+        updateModeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                NativeHelper.ioctlSetInteger("/dev/graphics/fb0", NativeHelper.MXCFB_SET_UPDATE_MODE, pos);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public void onToggleScreenOrientation(View view) {

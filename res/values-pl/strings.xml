@@ -9,4 +9,5 @@
     <string name="portrait_reversed">pion (odwrócony)</string>
     <string name="landscape_reversed">poziom (odwrócony)</string>
     <string name="unknown">nieznany</string>
+    <string name="update_mode_prompt">tryb odświeżania eInk</string>
 </resources>

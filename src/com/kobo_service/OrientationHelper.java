@@ -11,29 +11,11 @@ public class OrientationHelper {
     }
 
     public static void setTouchOrientation(final Context context, final int orientation) {
-        Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Process process = Runtime.getRuntime().exec(new String[] {
-                            "su", "-c", "sendevent /dev/input/event2 17 1 " + orientation
-                    });
-                    process.waitFor();
-                    process.destroy();
+        int res = NativeHelper.sendEvent("/dev/input/event2", (short)17, (short)1, orientation);
 
-                    Toast.makeText(context, context.getString(R.string.touch_set_to)
-                            + " " + getOrientationName(context, orientation),
-                            Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-
-                    Toast.makeText(context, context.getString(R.string.touch_set_failed)
-                            + " " + getOrientationName(context, orientation),
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        Toast.makeText(context, context.getString(R.string.touch_set_to)
+                + " " + getOrientationName(context, orientation),
+                Toast.LENGTH_SHORT).show();
     }
 
     public static String getOrientationName(Context context, int orientation) {

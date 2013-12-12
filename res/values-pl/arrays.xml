@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="update_modes">
+        <item>normalny</item>
+        <item>czytanie</item>
+        <item>monochromatyczny</item>
+        <item>monochromatyczny dithered</item>
+    </string-array>
+</resources>
