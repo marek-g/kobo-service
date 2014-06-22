@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class KoboService extends Service {
-    ConfigurationBroadcastReceiver _broadcastReceiver;
+    KoboBroadcastReceiver _koboBroadcastReceiver;
 
     public static void startService(Context context) {
         Intent service = new Intent(context, KoboService.class);
@@ -30,9 +30,9 @@ public class KoboService extends Service {
     public void onCreate() {
         Log.i("KoboService", "KoboService is starting.");
 
-        if (_broadcastReceiver == null) {
-            _broadcastReceiver = new ConfigurationBroadcastReceiver();
-            KoboServiceApplication.getAppContext().registerReceiver(_broadcastReceiver,
+        if (_koboBroadcastReceiver == null) {
+            _koboBroadcastReceiver = new KoboBroadcastReceiver();
+            KoboServiceApplication.getAppContext().registerReceiver(_koboBroadcastReceiver,
                     new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED));
         }
 
@@ -43,9 +43,9 @@ public class KoboService extends Service {
     public void onDestroy() {
         Log.i("KoboService", "KoboService is stopping.");
 
-        if (_broadcastReceiver != null) {
-            KoboServiceApplication.getAppContext().unregisterReceiver(_broadcastReceiver);
-            _broadcastReceiver = null;
+        if (_koboBroadcastReceiver != null) {
+            KoboServiceApplication.getAppContext().unregisterReceiver(_koboBroadcastReceiver);
+            _koboBroadcastReceiver = null;
         }
 
         super.onDestroy();

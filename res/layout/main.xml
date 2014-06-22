@@ -4,7 +4,7 @@
               android:layout_width="fill_parent"
               android:layout_height="wrap_content">
 
-    <Button android:id="@+id/button"
+    <Button android:id="@+id/buttonToggleScreenOrientation"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/toggle_screen_orientation"
@@ -12,11 +12,27 @@
             android:onClick="onToggleScreenOrientation"
             android:singleLine="false"/>
 
+    <View android:layout_width="0dp"
+          android:layout_height="50dp"
+          android:layout_weight="1" />
+
     <Spinner android:id="@+id/update_mode_spinner"
              android:layout_width="fill_parent"
              android:layout_height="wrap_content"
              android:entries="@array/update_modes"
              android:prompt="@string/update_mode_prompt"/>
+
+    <View android:layout_width="0dp"
+          android:layout_height="50dp"
+          android:layout_weight="1" />
+
+    <Button android:id="@+id/buttonUSBMode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/usb_mode"
+            android:layout_gravity="center"
+            android:onClick="onUSBMode"
+            android:singleLine="false"/>
 
 </LinearLayout>
 

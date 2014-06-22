@@ -20,9 +20,10 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".ConfigurationBroadcastReceiver" >
+        <receiver android:name=".KoboBroadcastReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.UMS_CONNECTED" />
             </intent-filter>
         </receiver>
 

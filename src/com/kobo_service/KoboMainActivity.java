@@ -17,8 +17,8 @@ public class KoboMainActivity extends Activity {
         KoboService.startService(this);
 
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.width = 320;
-        layoutParams.height = 240;
+        layoutParams.width = 400;
+        layoutParams.height = 320;
         getWindow().setAttributes(layoutParams);
 
         Spinner updateModeSpinner = (Spinner)findViewById(R.id.update_mode_spinner);
@@ -35,6 +35,15 @@ public class KoboMainActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Spinner updateModeSpinner = (Spinner)findViewById(R.id.update_mode_spinner);
+        int updateMode = NativeHelper.ioctlGetInteger("/dev/graphics/fb0", NativeHelper.MXCFB_GET_UPDATE_MODE);
+        updateModeSpinner.setSelection(updateMode);
+    }
+
     public void onToggleScreenOrientation(View view) {
         int orientation = OrientationHelper.getScreenOrientation(this);
         if (orientation == 0 || orientation == 2) {
@@ -42,5 +51,9 @@ public class KoboMainActivity extends Activity {
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
+    }
+
+    public void onUSBMode(View view) {
+        USBHelper.ShowUsbStorageActivity();
     }
 }
